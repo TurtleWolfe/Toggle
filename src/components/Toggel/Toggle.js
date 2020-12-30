@@ -8,11 +8,11 @@ export class Toggle extends Component {
     // Initial State
     this.state = {
       tglStart: "Start",
-      tglVariant: '"success"',
+      tglVariant: 'btn-success',
     };
 
     // This binding is necessary to make `this` work in the callback
-    this.setQuote = this.setQuote.bind(this);
+    this.setToggleOnOff = this.setToggleOnOff.bind(this);
 
   }
 
@@ -21,11 +21,32 @@ export class Toggle extends Component {
     tglVariant: PropTypes.string.isRequired,
   };
 
-  setQuote(tglStart) {
-    this.setState({
-      tglStart: "Stop",
-      tglVariant: `"danger"`,
-    });
+  // setToggleOnOff() {
+  //   let { tglStart } = this.state;
+  //   if (tglStart === "Start") {
+  //     this.setState({
+  //       tglStart: "Stop",
+  //       tglVariant: `"danger"`,
+  //     });
+  //   } else {
+  //     this.setState({
+  //       tglStart: "Start",
+  //       tglVariant: `"success"`,
+  //     });
+  //   }
+  // }
+
+  setToggleOnOff() {
+    let { tglStart } = this.state;
+    (tglStart === "Start") ?
+      this.setState({
+        tglStart: "Stop",
+        tglVariant: 'btn-danger',
+      }) :
+      this.setState({
+        tglStart: "Start",
+        tglVariant: 'btn-success',
+      });
   }
 
   render() {
@@ -34,29 +55,15 @@ export class Toggle extends Component {
     return (
       <Container>
         <Row className="justify-content-center">
-          <Col as={Button} variant="success" xs={2} sm={2} md={2} lg={2}
-            onClick={this.setQuote}>
-            <h1>
+          <Col as={Button} className={tglVariant} xs={4} sm={4} md={3} lg={2}
+            onClick={this.setToggleOnOff}>
+            <h4>
               {tglStart}
               <br></br>
               {tglVariant}
-            </h1>
+            </h4>
           </Col>
         </Row>
-        {/* <Row className="justify-content-center">
-          <Col as={Button} variant="success" xs={2} sm={2} md={2} lg={2} >
-            <h1>
-              Stop
-            </h1>
-          </Col>
-        </Row>
-        <Row className="justify-content-center">
-          <Col as={Button} variant="danger" xs={2} sm={2} md={2} lg={2} >
-            <h1>
-              {tglVariant}
-            </h1>
-          </Col>
-        </Row> */}
       </Container>
     );
   }

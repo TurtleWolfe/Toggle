@@ -1,4 +1,4 @@
-# ToggleR
+# [ToggleR](https://turtlewolfe.github.io/Toggle/ "Google's Homepage")
 
 ```bash
  npx create-react-app . --use-npm
