@@ -1,4 +1,17 @@
-# Getting Started with Create React App
+# ToggleR
+
+```bash
+ npx create-react-app . --use-npm
+ npm install react-bootstrap bootstrap
+ npm install gh-pages --save-dev
+ git remote add origin git@github.com:TurtleWolfe/Toggle.git
+ git push --set-upstream origin master
+ git status
+ npm init
+ code .
+```
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
