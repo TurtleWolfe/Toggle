@@ -27,8 +27,8 @@ export class Toggle extends Component {
     if (tglStart === "Start") {
       this.interval = setInterval(this.countDown, 1000);
       this.setState({
-        tglStart: "Stop",
-        tglVariant: 'btn-danger',
+        tglStart: "Pause",
+        tglVariant: 'btn-warning',
       });
     } else {
       this.setState({
@@ -64,7 +64,7 @@ export class Toggle extends Component {
     return (
       <Container>
         <Row className="justify-content-center">
-          <Col as={Button} className={tglVariant} xs={4} sm={4} md={3} lg={2}
+          <Col as={Button} className={tglVariant} xs={5} sm={4} md={3} lg={2}
             onClick={this.setToggleOnOff}>
             <h4>
               {tglStart}
@@ -75,9 +75,9 @@ export class Toggle extends Component {
         </Row>
         <br></br>
         <Row className="justify-content-center">
-          <Col as={Button} className={tglVariant} xs={4} sm={4} md={3} lg={2}
+          <Col as={Button} id="start_stop" className={tglVariant} xs={4} sm={4} md={3} lg={2}
             onClick={this.setToggleOnOff}>
-            <h4>
+            <h4 id="timer-left">
               {timeLft}
             </h4>
           </Col>
